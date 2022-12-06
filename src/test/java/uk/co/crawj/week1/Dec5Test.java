@@ -2,8 +2,6 @@ package uk.co.crawj.week1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Arrays;
-
 import org.junit.jupiter.api.Test;
 
 import uk.co.crawj.utility.StarLevel;
@@ -539,22 +537,9 @@ class Dec5Test
     @Test
     void test()
     {
-        assertEquals( "CMZ", Dec5.code( testInput, StarLevel.STAR_1 ) );
-        assertEquals( "CMZ", Dec5.code( actualInput, StarLevel.STAR_1 ) );
-    }
-    
-       /*    [D]
-         [N] [C]
-         [Z] [M] [P]
-         
-         00  01  02
-         10  11  12
-         20  21  22*/
-    
-    @Test
-    void generateBoard()
-    {
-        char[][] chars1 = Dec5.generateBoard( actualInput.split( "\n\n" )[0] );
-        System.out.println( Arrays.deepToString( chars1 ) );
+        assertEquals( "CMZ", Dec5.code( testInput, StarLevel.STAR_1 ).trim() );
+        assertEquals( "TQRFCBSJJ", Dec5.code( actualInput, StarLevel.STAR_1 ).trim() );
+        assertEquals( "MCD", Dec5.code( testInput, StarLevel.STAR_2 ).trim() );
+        assertEquals( "RMHFJNVFP", Dec5.code( actualInput, StarLevel.STAR_2 ).trim() );
     }
 }
